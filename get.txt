@@ -1,0 +1,26 @@
+      <Table striped bordered hover responsive="sm">
+        {/* {arr} */}
+        {/* {JSON.stringify(state.personData)} */}
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            Object.keys(state.personData).map((arr, index) => (
+              <tr key={index}>
+                <td>{/* state.personData[arr].key */ index + 1}</td>
+                <td>{state.personData[arr].firstName}</td>
+                <td>{state.personData[arr].lastName}</td>
+                <td><Button onClick={() => selectPerson(state.personData[arr].key)}>Put</Button> <br />
+                  <br />
+                  <Button onClick={() => getDelete(state.personData[arr].key)}>Delete</Button></td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </Table>
