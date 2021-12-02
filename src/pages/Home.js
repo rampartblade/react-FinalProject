@@ -33,8 +33,9 @@ function Home() {
             firstName: first_Name,
             lastName: last_Name,
         }
-        /* console.log(serverport) */
         dispatch(post(serverport))
+        console.log(state.error)
+
         Swal.fire({
             position: 'top',
             icon: 'success',

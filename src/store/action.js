@@ -34,15 +34,25 @@ export function readOne(key){
 
 export function post(serverport) {
     return async (dispatch) => {
-        //console.log(serverport)
         const res = await axios.post(`${baseURL}keys`, serverport)
+        /* .then(response =>{
+            dispatch({
+                type: 'ERROR',
+                payload: response.status
+            })
+        }).catch(error=>{
+            dispatch({
+                type: 'ERROR',
+                payload: error.response.status
+            })
+        }) */
         dispatch(readAll())
     }
 }
 
 export function put(key,data){
     return async (dispatch) => {
-        //const res = await axios.put(`${baseURL}keys/${key}`,data)
+        const res = await axios.put(`${baseURL}keys/${key}`,data)
         //console.log(`${baseURL}keys/${key}`)
         dispatch(readAll())
         /* {
@@ -54,7 +64,7 @@ export function put(key,data){
 
 export function deleted(key){
     return async (dispatch) => {
-        //const res = await axios.delete(`${baseURL}keys/${key}`)
+        const res = await axios.delete(`${baseURL}keys/${key}`)
         dispatch( readAll())
         /* {
             type: 'DELETE',

@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 const initialState = {
     people: [],
     person: {},
+    error: {}
 }
 
 const personAction = (state = initialState, action) => {

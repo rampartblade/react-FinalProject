@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import NotFound from './pages/NotFound';
 import PersonDetails from './pages/PersonDetails';
 import store from './store';
 
@@ -16,6 +17,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="*" element={<NotFound/>}/>
           <Route path="/PersonDetails" element={<PersonDetails />}>
             <Route path=":key" element={<PersonDetails />} />
           </Route>
